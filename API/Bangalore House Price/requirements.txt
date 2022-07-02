@@ -1,0 +1,4 @@
+flask
+numpy
+sklearn
+gunicorn == 19.9.0
