@@ -71,8 +71,8 @@ public class BangaloreActivity extends AppCompatActivity {
                     location.setError("Select Any Location");
                 }else if (area.getText().toString().isEmpty()){
                     area.setError("Select type of Area");
-                }else if (sqft.getText().toString().isEmpty() || sqft.getText().toString().equals("0") || Integer.parseInt(sqft.getText().toString()) < 500){
-                    sqft.setError("Cannot be Empty / 0 / <500");
+                }else if (sqft.getText().toString().isEmpty() || sqft.getText().toString().equals("0") || Integer.parseInt(sqft.getText().toString()) < 400){
+                    sqft.setError("Cannot be Empty / 0 / <400");
                 }else if (bath.getText().toString().isEmpty() || bath.getText().toString().equals("0") || (Integer.parseInt(bath.getText().toString()) > 10) || (Integer.parseInt(bath.getText().toString()) > (Integer.parseInt(bhk.getText().toString())))) {
                     bath.setError("Cannot be Empty / 0 / >10 / > no. of rooms");
                 }else if (bhk.getText().toString().isEmpty() || bhk.getText().toString().equals("0") || Integer.parseInt(bhk.getText().toString()) > 10){
@@ -81,6 +81,26 @@ public class BangaloreActivity extends AppCompatActivity {
                     balcony.setError("Cannot be Empty / 0 / >10 / > no. of rooms");
                 }else if (ready.getText().toString().isEmpty()){
                     ready.setError("Select something!");
+                }else if(bhk.getText().toString().equals("1") && (Integer.parseInt(sqft.getText().toString()) > 1500)){
+                    Toast.makeText(BangaloreActivity.this,"For 1BHK area should be in this range : 400-1500 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("2") && ((Integer.parseInt(sqft.getText().toString()) < 700) || (Integer.parseInt(sqft.getText().toString()) > 2000))){
+                    Toast.makeText(BangaloreActivity.this,"For 2BHK area should be in this range : 700-2000 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("3") && ((Integer.parseInt(sqft.getText().toString()) < 900) || (Integer.parseInt(sqft.getText().toString()) > 3300))){
+                    Toast.makeText(BangaloreActivity.this,"For 3BHK area should be in this range : 900-3300 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("4") && ((Integer.parseInt(sqft.getText().toString()) < 1300) || (Integer.parseInt(sqft.getText().toString()) > 5000))){
+                    Toast.makeText(BangaloreActivity.this,"For 4BHK area should be in this range : 1300-5000 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("5") && ((Integer.parseInt(sqft.getText().toString()) < 1500) || (Integer.parseInt(sqft.getText().toString()) > 5500))){
+                    Toast.makeText(BangaloreActivity.this,"For 5BHK area should be in this range : 1500-5500 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("6") && ((Integer.parseInt(sqft.getText().toString()) < 1800) || (Integer.parseInt(sqft.getText().toString()) > 6000))){
+                    Toast.makeText(BangaloreActivity.this,"For 6BHK area should be in this range : 1800-6000 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("7") && ((Integer.parseInt(sqft.getText().toString()) < 2100) || (Integer.parseInt(sqft.getText().toString()) > 6000))){
+                    Toast.makeText(BangaloreActivity.this,"For 7BHK area should be in this range : 2100-6000 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("8") && ((Integer.parseInt(sqft.getText().toString()) < 2400) || (Integer.parseInt(sqft.getText().toString()) > 6000))){
+                    Toast.makeText(BangaloreActivity.this,"For 8BHK area should be in this range : 2400-6000 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("9") && ((Integer.parseInt(sqft.getText().toString()) < 2600) || (Integer.parseInt(sqft.getText().toString()) > 6000))){
+                    Toast.makeText(BangaloreActivity.this,"For 9BHK area should be in this range : 2600-6000 sq. ft",Toast.LENGTH_LONG).show();
+                }else if(bhk.getText().toString().equals("10") && ((Integer.parseInt(sqft.getText().toString()) < 3000) || (Integer.parseInt(sqft.getText().toString()) > 6000))){
+                    Toast.makeText(BangaloreActivity.this,"For 10BHK area should be in this range : 3000-6000 sq. ft",Toast.LENGTH_LONG).show();
                 }else{
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                             new Response.Listener<String>() {
